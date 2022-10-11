@@ -1,16 +1,24 @@
-import React from 'react';
-import Carousel from '../Carousel/Carousel';
+import React from "react";
+import Carousel from "../Carousel/Carousel";
+import { useLoaderData } from "react-router-dom";
+import Topic from "../Topic/Topic";
 
 const Home = () => {
-    return (
-        <div>
-            <Carousel></Carousel>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officia, animi dolor eos et temporibus numquam! Rem beatae esse ad non nihil similique provident incidunt iure fuga fugiat ea, corporis nostrum earum velit odit architecto aperiam doloribus perferendis fugit ullam totam. Repudiandae exercitationem totam numquam molestiae temporibus alias recusandae. Totam temporibus molestiae dolores possimus expedita quas tempore dicta ipsa. Sunt quas sint est labore dolorem laborum quasi quibusdam omnis enim nobis rerum ipsam, vitae totam distinctio ullam expedita aliquid officiis. Debitis soluta eaque molestias dicta nisi, obcaecati eos. Blanditiis iste pariatur tenetur vitae, incidunt recusandae corrupti inventore id fugit ratione accusamus atque, aliquam quibusdam, expedita minima similique vero ducimus molestiae sit dolore nam rem at perferendis. Labore tenetur vero accusantium, quasi libero ullam quod illo qui unde ab, dicta laudantium ducimus fugit pariatur dolor rem molestiae voluptatibus! Consequatur doloremque odit eius magnam quas tenetur voluptas nesciunt cumque voluptatibus repellat excepturi suscipit fugiat, quos hic laboriosam atque exercitationem, minus aliquam delectus explicabo facere nihil? Quos dolores architecto repellendus, doloremque nemo nulla dolore consequuntur! Numquam mollitia possimus sed doloremque earum nemo odit voluptate animi velit, optio illum esse facere temporibus veniam consectetur quibusdam officia quae quia consequatur. Nulla vero, reprehenderit excepturi minima aspernatur nihil doloremque, aut pariatur ratione mollitia, atque deserunt. Perspiciatis veritatis quis est voluptate enim sunt suscipit harum facere debitis repellat provident, sapiente omnis possimus beatae illo libero cupiditate quibusdam quam voluptatem excepturi rem expedita? Dolorum soluta nulla repellendus aut. At eum modi harum quis quam facere esse deserunt quas excepturi animi. Dolores alias vero illo in impedit, quisquam maxime ipsam numquam illum odit beatae aliquid nisi, non accusamus nostrum placeat, eos aspernatur saepe. Dolores earum eaque similique, ad autem animi quaerat doloremque eveniet vero laborum. Perferendis explicabo quia voluptatum perspiciatis laudantium labore culpa nulla nostrum ducimus quod odio aspernatur incidunt voluptas molestias, provident eveniet aut tenetur rem? Minus laudantium rem eaque deleniti cumque, fugiat accusantium eligendi numquam omnis consectetur voluptatum perspiciatis ipsam similique perferendis nobis! Inventore architecto neque a, dolorum eos obcaecati illo maiores magni aut sint amet accusantium incidunt explicabo voluptate quae laboriosam, nihil ea similique. Fuga vero reprehenderit animi vel ullam optio nihil, earum facere deleniti tempore obcaecati ad! Laborum rerum sequi iure. Consectetur cumque, enim magni iste quis modi dolorem est. Dolorum nemo assumenda consectetur, ad esse, animi asperiores possimus pariatur ratione modi blanditiis cupiditate ea fuga maxime soluta repellat? Voluptate, qui ipsam consectetur explicabo nesciunt facere, quibusdam animi ducimus repudiandae quos quisquam itaque dicta doloribus necessitatibus, aperiam placeat! A atque, culpa doloribus id sunt incidunt facilis. Quaerat ratione illum amet iure nisi illo at ipsam in commodi numquam hic suscipit ab voluptates vel deleniti tempore, consectetur facere quidem unde error dolores accusamus expedita magni? Earum magnam officia adipisci, vero ullam soluta doloribus vel sit quod facere eveniet quos. Sapiente rerum deleniti ea nobis voluptatum accusantium eius ducimus qui magni deserunt itaque, excepturi sint provident fugit, odio inventore sit nulla quod sequi voluptatibus enim delectus, reiciendis expedita. Magnam, nesciunt maxime quasi inventore ducimus assumenda quod ipsam consectetur.</p>
-            <div id="topic">
-hello topic
-            </div>
+  const topics = useLoaderData().data; 
+  return (
+    <div>
+      <Carousel></Carousel>
+
+      <div className="container mx-auto mt-20 px-4" id="topic">
+        <h3 className="text-4xl mb-14">Quiz Topics</h3>
+        <div className="topic-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {topics.map((topic) => (
+            <Topic key={topic.id} topic={topic}></Topic>
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Home;

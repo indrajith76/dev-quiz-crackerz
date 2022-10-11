@@ -6,7 +6,7 @@ import banner3 from "../../assets/banner3.png";
 
 const Carousel = () => {
   return (
-    <div className="carousel w-full md:container mx-auto">
+    <div className="carousel w-full">
       <div id="slide1" className="carousel-item relative w-full">
         <div className="absolute text-slate-400 left-44 top-20 text-center">
           <h1 className="text-5xl mb-5">Welcome To</h1>

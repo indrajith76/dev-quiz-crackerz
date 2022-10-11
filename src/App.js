@@ -10,7 +10,13 @@ function App() {
     {
       path: "/",
       element: <Main></Main>,
-      children: [{ path: "/", element: <Home></Home> }],
+      children: [
+        {
+          path: "/",
+          loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+          element: <Home></Home>,
+        },
+      ],
     },
   ]);
   return <RouterProvider router={router}></RouterProvider>;
