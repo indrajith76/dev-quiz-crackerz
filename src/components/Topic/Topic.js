@@ -1,6 +1,7 @@
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Topic = ({ topic }) => {
   const { id, name, logo, total } = topic;
@@ -14,10 +15,10 @@ const Topic = ({ topic }) => {
           {name}
           <div className="badge badge-secondary">{total} Questions</div>
         </h2>
-        <button className="bg-teal-500 hover:bg-teal-400 text-slate-700 py-2 rounded">
+        <Link to={`/quiz/${id}`} className="text-center bg-teal-500 hover:bg-teal-400 text-slate-700 py-2 rounded">
           <span className="font-semibold">Start Test</span>
           <FontAwesomeIcon className="ml-2" icon={faArrowRight}></FontAwesomeIcon>
-        </button>
+        </Link>
       </div>
     </div>
   );

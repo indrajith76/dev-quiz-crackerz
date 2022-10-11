@@ -1,5 +1,7 @@
 import { useState } from "react";
 import logo from "../../logo.jpg";
+import { NavHashLink } from "react-router-hash-link";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -7,48 +9,61 @@ const Nav = () => {
   return (
     <div className="px-4 py-5 sm:max-w-xl md:max-w-full  md:px-24 lg:px-8 sticky top-0 bg-slate-800 z-10 shadow-lg">
       <div className="relative flex items-center justify-between">
-        <a href="/" className="inline-flex items-center">
+        <NavLink to="/" className="inline-flex items-center">
           <img className="w-9" src={logo} alt="" />
           <span className="ml-2 text-xl font-bold tracking-wide text-teal-500 uppercase">
             Dev Quiz
           </span>
-        </a>
+        </NavLink>
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/" 
-              className="font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            <NavLink
+              to="/home"
+              className={({ isActive }) =>
+                isActive
+                  ? "font-medium tracking-wide text-teal-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  : "font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/#topic" 
+            <NavHashLink
+              smooth
+              to="/#topic"
               className="font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Topic
-            </a>
+            </NavHashLink>
           </li>
           <li>
-            <a
-              href="/statistics" 
-              className="font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            <NavLink
+              to="/statistics"
+              className={({ isActive }) =>
+                isActive
+                  ? "font-medium tracking-wide text-teal-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  : "font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               Statistics
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="/blogs" 
-              className="font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+            <NavLink
+              to="/blogs"
+              className={({ isActive }) =>
+                isActive
+                  ? "font-medium tracking-wide text-teal-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                  : "font-medium tracking-wide text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-400"
+              }
             >
               Blogs
-            </a>
+            </NavLink>
           </li>
         </ul>
         <div className="lg:hidden">
-          <button 
+          <button
             className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
             onClick={() => setIsMenuOpen(true)}
           >
@@ -69,21 +84,18 @@ const Nav = () => {
           </button>
           {isMenuOpen && (
             <div className="absolute top-0 left-0 w-full">
-              <div className="p-5 bg-white border rounded shadow-sm">
+              <div className="p-5 bg-slate-800 border border-teal-800 rounded shadow-teal-500 shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
-                      href="/" 
-                      className="inline-flex items-center"
-                    >
+                    <NavLink to="/" className="inline-flex items-center">
                       <img className="w-9" src={logo} alt="" />
-                      <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
+                      <span className="ml-2 text-xl font-bold tracking-wide text-teal-500 uppercase">
                         Dev Quiz
                       </span>
-                    </a>
+                    </NavLink>
                   </div>
                   <div>
-                    <button 
+                    <button
                       className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -99,36 +111,37 @@ const Nav = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="/" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      <NavLink
+                        to="/home"
+                        className="font-medium tracking-wide text-gray-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Home
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a
-                        href="#topic" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      <NavHashLink
+                        smooth
+                        to="/#topic"
+                        className="font-medium tracking-wide text-gray-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Topic
-                      </a>
+                      </NavHashLink>
                     </li>
                     <li>
-                      <a
-                        href="/statistics" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      <NavLink
+                        to="/statistics"
+                        className="font-medium tracking-wide text-gray-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Statistics
-                      </a>
+                      </NavLink>
                     </li>
                     <li>
-                      <a
-                        href="/blogs" 
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
+                      <NavLink
+                        to="/blogs"
+                        className="font-medium tracking-wide text-gray-500 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Blogs
-                      </a>
+                      </NavLink>
                     </li>
                   </ul>
                 </nav>
