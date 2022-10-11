@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import Topic from "../Topic/Topic";
 
 const Home = () => {
-  const topics = useLoaderData().data; 
+  const topics = useLoaderData().data;
   return (
     <div>
       <Carousel></Carousel>
