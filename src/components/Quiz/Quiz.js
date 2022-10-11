@@ -8,6 +8,7 @@ const Quiz = () => {
   const [count, setCount] = useState(0);
   const quizzes = useLoaderData().data;
   const { name, logo, questions } = quizzes;
+  console.log(questions.length);
   return (
     <CountContext.Provider value={[count, setCount]}>
       <div>

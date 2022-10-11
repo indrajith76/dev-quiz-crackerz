@@ -3,12 +3,13 @@ import swal from "sweetalert";
 import { CountContext } from "../Quiz/Quiz";
 import "./Option.css";
 
-const Option = ({ option, correctAnswer }) => {
+const Option = ({ option, correctAnswer, lock, setLock }) => {
   const [check, setCheck] = useState(false);
   const [count, setCount] = useContext(CountContext);
 
   const optionHandler = () => {
     setCheck(!check);
+    setLock(!lock);
   };
 
   useEffect(() => {

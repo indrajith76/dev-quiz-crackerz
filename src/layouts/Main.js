@@ -5,7 +5,7 @@ import Header from "../components/Header/Header";
 
 const Main = () => {
   return (
-    <div className="2xl:container mx-auto">
+    <div className="2xl:container mx-auto select-none">
       <Header></Header>
       <Outlet></Outlet>
       <Footer></Footer>
