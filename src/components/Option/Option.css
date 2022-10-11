@@ -1,0 +1,36 @@
+.swal-modal {
+  background: #1a2433;
+}
+
+.swal-title, .swal-text {
+  color: #d6d6d6;
+}
+
+.swal-icon--success:before {
+  background: #1a2433;
+}
+.swal-icon--success::after {
+  background: #1a2433;
+}
+
+.swal-icon--success__hide-corners {
+  background: #1a2433;
+}
+
+.swal-icon--success__line {
+  background: #14b8a6;
+}
+
+.swal-icon--success__ring {
+  border: 4px solid hsla(98, 55%, 69%, 0.2);
+}
+.swal-icon--success {
+  border-color: #14b8a6;
+}
+.swal-button {
+  background: #0da190;
+}
+.swal-button-container {
+  display: flex;
+  justify-content: center;
+}
