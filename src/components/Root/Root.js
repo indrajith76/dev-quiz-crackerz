@@ -1,9 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../layouts/Main";
-import Home from "../../components/Home/Home";
-import ErrorPage from "../../components/ErrorPage/ErrorPage";
+import Home from "../Home/Home";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Quiz from "../Quiz/Quiz";
 import Statistics from "../Statistics/Statistics";
+import Blogs from "../Blogs/Blogs";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,7 @@ export const router = createBrowserRouter([
         },
         element: <Statistics></Statistics>,
       },
+      { path: "/blogs", element: <Blogs></Blogs> },
       { path: "/*", element: <ErrorPage></ErrorPage> },
     ],
   },
