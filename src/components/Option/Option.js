@@ -15,7 +15,7 @@ const Option = ({ option, correctAnswer, lock, setLock }) => {
   useEffect(() => {
     if (check) {
       if (option === correctAnswer) {
-        swal("Good job!", "You clicked the button!", "success");
+        swal("Good job!", "You selected the correct answer!", "success");
         setCount(count + 1);
       }
     }
