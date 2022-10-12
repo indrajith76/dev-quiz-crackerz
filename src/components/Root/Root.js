@@ -3,6 +3,7 @@ import Main from "../../layouts/Main";
 import Home from "../../components/Home/Home";
 import ErrorPage from "../../components/ErrorPage/ErrorPage";
 import Quiz from "../Quiz/Quiz";
+import Statistics from "../Statistics/Statistics";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,13 @@ export const router = createBrowserRouter([
           );
         },
         element: <Quiz></Quiz>,
+      },
+      {
+        path: "/statistics",
+        loader: async () => {
+          return fetch("https://openapi.programming-hero.com/api/quiz");
+        },
+        element: <Statistics></Statistics>,
       },
       { path: "/*", element: <ErrorPage></ErrorPage> },
     ],

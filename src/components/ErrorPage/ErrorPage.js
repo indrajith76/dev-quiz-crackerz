@@ -7,7 +7,7 @@ const ErrorPage = () => {
   return (
     <div className="mt-9">
       <div className="flex justify-center">
-        <Lottie className="w-2/5" animationData={ErrorAnimation}></Lottie>
+        <Lottie className="md:w-2/5" animationData={ErrorAnimation}></Lottie>
       </div>
       <div className="text-center">
         <h1 className="text-2xl md:text-5xl text-slate-100 mb-4">Page Not Found!</h1>
