@@ -26,7 +26,7 @@ const renderCustomizedLabel = ({
       x={x}
       y={y}
       fill="white"
-      textAnchor={x > cx ? "start" : "end"}
+      textAnchor= {x > cx ? "start" : "end"}
       dominantBaseline="central"
     >
       {`${(percent * 100).toFixed(0)}%`}
@@ -77,10 +77,18 @@ const Quiz = () => {
             <h1 className="text-center text-3xl">Correct Answers : {count}</h1>
             <div className="flex justify-center gap-5 mt-3">
               <p>
-                <FontAwesomeIcon className="text-[#FF8042]" icon={faSquare}></FontAwesomeIcon> Wrong
+                <FontAwesomeIcon
+                  className="text-[#FF8042]"
+                  icon={faSquare}
+                ></FontAwesomeIcon>{" "}
+                Wrong
               </p>
               <p>
-                <FontAwesomeIcon className="text-[#00C49F]" icon={faSquare}></FontAwesomeIcon> Right
+                <FontAwesomeIcon
+                  className="text-[#00C49F]"
+                  icon={faSquare}
+                ></FontAwesomeIcon>{" "}
+                Right
               </p>
             </div>
           </div>
