@@ -38,6 +38,7 @@ export const CountContext = createContext(0);
 
 const Quiz = () => {
   const [count, setCount] = useState(0);
+  const [countWrong, setCountWrong] = useState(0);
   const quizzes = useLoaderData().data;
   const { name, logo, questions } = quizzes;
 
@@ -47,11 +48,11 @@ const Quiz = () => {
   ];
 
   return (
-    <CountContext.Provider value={[count, setCount]}>
+    <CountContext.Provider value={[count, setCount, countWrong, setCountWrong]}>
       <div>
         <div className="flex items-center justify-center gap-5 mt-10 mb-10">
           <img className="w-24 rounded-full" src={logo} alt="" />
-          <h1 className="text-5xl">{name}</h1>
+          <h1 className="text-5xl text-slate-400">{name}</h1>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-5 mb-10">
           <PieChart width={180} height={180}>
@@ -74,21 +75,21 @@ const Quiz = () => {
             </Pie>
           </PieChart>
           <div>
-            <h1 className="text-center text-3xl">Correct Answers : {count}</h1>
+            <h1 className="text-center text-3xl text-slate-400">Correct Answers : {count}</h1>
             <div className="flex justify-center gap-5 mt-3">
-              <p>
+              <p className="text-slate-400">
                 <FontAwesomeIcon
                   className="text-[#FF8042]"
                   icon={faSquare}
                 ></FontAwesomeIcon>{" "}
-                Wrong
+                Wrong : {countWrong}
               </p>
-              <p>
+              <p className="text-slate-400">
                 <FontAwesomeIcon
                   className="text-[#00C49F]"
                   icon={faSquare}
                 ></FontAwesomeIcon>{" "}
-                Right
+                Right : {count}
               </p>
             </div>
           </div>

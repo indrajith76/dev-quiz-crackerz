@@ -11,7 +11,7 @@ const Topic = ({ topic }) => {
         <img src={logo} alt="Shoes" />
       </figure>
       <div className="card-body p-0 pt-2">
-        <h2 className="card-title">
+        <h2 className="card-title text-slate-400">
           {name}
           <div className="badge badge-secondary">{total} Questions</div>
         </h2>

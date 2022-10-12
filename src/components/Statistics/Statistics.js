@@ -55,7 +55,7 @@ const Statistics = () => {
           <Bar dataKey="total" fill="#14b8a6" />
           <Tooltip />
         </BarChart>
-        <h1 className="text-center text-2xl">Questions Chart</h1>
+        <h1 className="text-center text-2xl text-gray-400">Questions Chart</h1>
       </div>
       <div>
         <PieChart width={350} height={350}>
@@ -78,28 +78,28 @@ const Statistics = () => {
           </Pie>
         </PieChart>
         <div className="flex justify-between">
-          <p>
+          <p className="text-slate-400">
             <FontAwesomeIcon
               className="text-[#FF8042] mr-2"
               icon={faSquare}
             ></FontAwesomeIcon>
             Git
           </p>
-          <p>
+          <p className="text-slate-400">
             <FontAwesomeIcon
               className="text-[#00c49f] mr-2"
               icon={faSquare}
             ></FontAwesomeIcon>
             JavaScript
           </p>
-          <p>
+          <p className="text-slate-400">
             <FontAwesomeIcon
               className="text-[#ffbb28] mr-2"
               icon={faSquare}
             ></FontAwesomeIcon>
             CSS
           </p>
-          <p>
+          <p className="text-slate-400">
             <FontAwesomeIcon
               className="text-[#0088fe] mr-2"
               icon={faSquare}
@@ -107,7 +107,7 @@ const Statistics = () => {
             React
           </p>
         </div>
-        <h1 className="text-center text-2xl mt-4">Questions Pie Chart</h1>
+        <h1 className="text-center text-2xl mt-4 text-gray-400">Questions Pie Chart</h1>
       </div>
     </div>
   );

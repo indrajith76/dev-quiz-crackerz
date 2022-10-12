@@ -5,7 +5,7 @@ import "./Option.css";
 
 const Option = ({ option, correctAnswer, lock, setLock }) => {
   const [check, setCheck] = useState(false);
-  const [count, setCount] = useContext(CountContext);
+  const [count, setCount, countWrong, setCountWrong] = useContext(CountContext);
 
   const optionHandler = () => {
     setCheck(!check);
@@ -17,6 +17,9 @@ const Option = ({ option, correctAnswer, lock, setLock }) => {
       if (option === correctAnswer) {
         swal("Good job!", "You selected the correct answer!", "success");
         setCount(count + 1);
+      } else {
+        swal("Opps.!", "You selected the wrong answer!", "error");
+        setCountWrong(countWrong + 1);
       }
     }
   }, [check]);
@@ -28,7 +31,7 @@ const Option = ({ option, correctAnswer, lock, setLock }) => {
       className={
         check
           ? "flex gap-2 border p-3 cursor-pointer bg-white text-slate-900 shadow-md hover:shadow-teal-500"
-          : "flex gap-2 border p-3 cursor-pointer hover:bg-white hover:text-slate-900 shadow-md hover:shadow-teal-500"
+          : "flex gap-2 border p-3 cursor-pointer hover:bg-white text-slate-400 hover:text-slate-900 shadow-md hover:shadow-teal-500"
       }
     >
       <input type="radio" onChange={clicked} checked={check} />

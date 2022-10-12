@@ -6,15 +6,15 @@ const Blogs = () => {
   return (
     <div className="mt-10 container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 px-5">
       <div className="border border-teal-700 p-5">
-        <h4 className="text-xl mb-3">
+        <h4 className="text-xl mb-3 text-slate-400">
           <span className="bg-teal-500 text-slate-800 px-2 rounded-full mr-1">
             1
           </span>
           What is the purpose of react router?
         </h4>
-        <p>
+        <p className='text-slate-400'>
           <FontAwesomeIcon
-            className="text-teal-500"
+            className="text-teal-500 mr-1"
             icon={faArrowRight}
           ></FontAwesomeIcon>
           ReactJS Router is mainly used for developing Single Page Web
@@ -25,13 +25,13 @@ const Blogs = () => {
         </p>
       </div>
       <div className="border border-teal-700 p-5">
-        <h4 className="text-xl mb-3">
+        <h4 className="text-xl mb-3 text-slate-400">
           <span className="bg-teal-500 text-slate-800 px-2 rounded-full mr-1">
             2
           </span>
           How does context API works?
         </h4>
-        <p>
+        <p className='text-slate-400'>
           <FontAwesomeIcon
             className="text-teal-500"
             icon={faArrowRight}
@@ -40,13 +40,13 @@ const Blogs = () => {
         </p>
       </div>
       <div className="border border-teal-700 p-5">
-        <h4 className="text-xl mb-3">
+        <h4 className="text-xl mb-3 text-slate-400">
           <span className="bg-teal-500 text-slate-800 px-2 rounded-full mr-1">
             3
           </span>{" "}
           What is useRef in react?
         </h4>
-        <p>
+        <p className='text-slate-400'>
           <FontAwesomeIcon
             className="text-teal-500"
             icon={faArrowRight}

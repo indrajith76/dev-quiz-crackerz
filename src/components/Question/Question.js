@@ -16,8 +16,8 @@ const Question = ({ quizQuestion }) => {
   return (
     <div className="border p-5 w-3/4 mx-auto relative">
       <div className="flex justify-between gap-3">
-        <h4 className="text-2xl">{newQuestion}</h4>
-        <button onClick={viewAnswer} className="hover:text-teal-500">
+        <h4 className="text-2xl text-slate-400">{newQuestion}</h4>
+        <button onClick={viewAnswer} className="text-slate-400 hover:text-teal-500">
           <FontAwesomeIcon icon={faEye}></FontAwesomeIcon>
         </button>
       </div>
